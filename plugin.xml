@@ -7,6 +7,8 @@
     <description>Mirror Link Api</description>
     <license>MIT</license>
     <keywords>cordova,plugin,mirrorlink</keywords>
+    <repo>https://github.com/buse974/cordova-plugin-mirrorlink.git</repo>
+    <issue>https://github.com/buse974/cordova-plugin-mirrorlink/issues</issue>
 
     <config-file target="AndroidManifest.xml" parent="/manifest">
 	<uses-permission android:name="com.mirrorlink.android.service.ACCESS_PERMISSION" />
