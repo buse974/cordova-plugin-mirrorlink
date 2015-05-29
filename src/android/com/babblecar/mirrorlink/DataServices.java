@@ -184,6 +184,7 @@ public class DataServices extends AbstractMirrorLinkPlugin {
             execlocal();
             return true;
         }
+        //TODO do setObject
         /*else if("setObject".equals(action)) {
             callbackSetObject = callbackContext;
             callbackLocal = new MirrorLinkCallback()  {

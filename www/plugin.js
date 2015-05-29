@@ -56,6 +56,26 @@ var mirrolink = {
         isInDriveMode : function (success, fail) {
             cordova.exec(success, fail, 'eventMappings', 'eventMappings', []);
         }
+    },
+    Connection : {
+         onAudioConnectionsChanged : function (success, fail) {
+             cordova.exec(success, fail, 'Connection', 'onAudioConnectionsChanged', []);
+         },
+         onRemoteDisplayConnectionChanged : function (success, fail) {
+             cordova.exec(success, fail, 'Connection', 'onRemoteDisplayConnectionChanged', []);
+         },
+         getAudioConnections : function (success, fail) {
+             cordova.exec(success, fail, 'Connection', 'getAudioConnections', []);
+         },
+         getRemoteDisplayConnections : function (success, fail) {
+             cordova.exec(success, fail, 'Connection', 'getRemoteDisplayConnections', []);
+         },
+         isMirrorLinkSessionEstablished : function (success, fail) {
+             cordova.exec(success, fail, 'Connection', 'isMirrorLinkSessionEstablished', []);
+         },
+         onMirrorLinkSessionChanged : function (success, fail) {
+             cordova.exec(success, fail, 'Connection', 'onMirrorLinkSessionChanged', []);
+         }
     }
 };
 

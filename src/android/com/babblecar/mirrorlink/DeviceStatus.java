@@ -111,9 +111,7 @@ public class DeviceStatus extends AbstractMirrorLinkPlugin {
                 @Override
                 public void callbackCall() {
                     try {
-                        final Boolean micInput = args.getBoolean(0);
-                        final Boolean voiceInput = args.getBoolean(1);
-                        callbackSetMicrophoneOpen.success(String.valueOf(mDeviceStatusManager.setMicrophoneOpen(micInput, voiceInput)));
+                        callbackSetMicrophoneOpen.success(String.valueOf(mDeviceStatusManager.setMicrophoneOpen(args.getBoolean(0), args.getBoolean(1))));
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     } catch (JSONException e) {

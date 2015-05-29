@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="com.babblecar.mirrorlink"
+        id="cordova-plugin-mirrorlink"
         version="0.0.1">
     <name>Mirror Link</name>
     <description>Mirror Link Api</description>
@@ -23,8 +23,12 @@
             <feature name="EventMapping" >
                 <param name="android-package" value="com.babblecar.mirrorlink.EventMapping"/>
             </feature>
+            <feature name="Connection" >
+                <param name="android-package" value="com.babblecar.mirrorlink.Connection"/>
+            </feature>
         </config-file>
 
+        <source-file src="src/android/com/babblecar/mirrorlink/Connection.java" target-dir="src/com/babblecar/mirrorlink"/>
         <source-file src="src/android/com/babblecar/mirrorlink/MirrorLinkCallback.java" target-dir="src/com/babblecar/mirrorlink"/>
         <source-file src="src/android/com/babblecar/mirrorlink/AbstractMirrorLinkPlugin.java" target-dir="src/com/babblecar/mirrorlink"/>
         <source-file src="src/android/com/babblecar/mirrorlink/DeviceStatus.java" target-dir="src/com/babblecar/mirrorlink"/>
