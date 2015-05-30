@@ -10,14 +10,24 @@
     <repo>https://github.com/buse974/cordova-plugin-mirrorlink.git</repo>
     <issue>https://github.com/buse974/cordova-plugin-mirrorlink/issues</issue>
 
-    <config-file target="AndroidManifest.xml" parent="/manifest">
-	<uses-permission android:name="com.mirrorlink.android.service.ACCESS_PERMISSION" />
-    </config-file>
     <js-module src="www/plugin.js" name="MirrorLink">
         <clobbers target="cordova.plugins.MirrorLink" />
     </js-module>
 
     <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="com.mirrorlink.android.service.ACCESS_PERMISSION" />
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
+            <intent-filter>
+                <action android:name="com.mirrorlink.android.app.TERMINATE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.mirrorlink.android.app.LAUNCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </config-file>
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="DeviceStatus" >
                 <param name="android-package" value="com.babblecar.mirrorlink.DeviceStatus"/>
@@ -29,6 +39,7 @@
                 <param name="android-package" value="com.babblecar.mirrorlink.Connection"/>
             </feature>
         </config-file>
+
 
         <source-file src="src/android/com/babblecar/mirrorlink/Connection.java" target-dir="src/com/babblecar/mirrorlink"/>
         <source-file src="src/android/com/babblecar/mirrorlink/MirrorLinkCallback.java" target-dir="src/com/babblecar/mirrorlink"/>
